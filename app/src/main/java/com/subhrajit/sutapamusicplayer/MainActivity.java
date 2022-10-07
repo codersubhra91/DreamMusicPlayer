@@ -14,6 +14,7 @@ import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
@@ -21,6 +22,7 @@ import com.google.android.material.tabs.TabLayout;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+    ArrayList<SongModel>allMusicFiles = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +40,10 @@ public class MainActivity extends AppCompatActivity {
         viewPagerAdapter.addFragments(new AlbumFragment(),"Albums");
         viewPager.setAdapter(viewPagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
-
+        allMusicFiles.addAll(MusicLibraryScanner.fetchAllSongs(this));
+        for (SongModel song: allMusicFiles){
+            Log.e("Song name: "+song.getTitle(),"Song Path: "+song.getPath());
+        }
     }
 
     public static class ViewPagerAdapter extends FragmentPagerAdapter{

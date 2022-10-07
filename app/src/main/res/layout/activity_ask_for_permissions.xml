@@ -6,6 +6,28 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".AskForPermissions">
+     <TextView
+        android:id="@+id/txtAndroidVersion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:text="Android Version" />
+    <TextView
+        android:id="@+id/txtMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtAndroidVersion"
+        android:padding="10dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:text="TextView" />
 
     <ImageButton
         android:id="@+id/btnAskPermission"
@@ -16,4 +38,5 @@
         android:background="@null"
         android:padding="20dp"
         app:srcCompat="@drawable/android" />
+
 </RelativeLayout>
