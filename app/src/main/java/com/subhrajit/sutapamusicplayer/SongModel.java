@@ -1,6 +1,9 @@
 package com.subhrajit.sutapamusicplayer;
 
-public class SongModel {
+
+import java.io.Serializable;
+
+public class SongModel implements Serializable {
     public String path;
     public String title;
     public String artist;
@@ -20,7 +23,7 @@ public class SongModel {
     }
 
     public String getPath() {
-        return path;
+        return this.path;
     }
 
     public void setPath(String path) {
